@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Dynamic-api-php by MohammedAlimoor</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Dynamic-api-php</h1>
+        <h2></h2>
+        <a href="https://github.com/MohammedAlimoor/Dynamic-Api-php" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="dynamic-api-php" class="anchor" href="#dynamic-api-php" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dynamic-Api-php</h1>
+
+<p>a dynamic api php, mysql  with output json (for  small project)
+Give you  many services to manage your database (select , search , add ,  update , remove )</p>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p><img src="https://raw.githubusercontent.com/MohammedAlimoor/Dynamic-Api-php/master/ScreenShot.png" alt="alt tag"></p>
+
+<h3>
+<a id="config-database" class="anchor" href="#config-database" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Config database</h3>
+
+<p>link api with  your  database </p>
+
+<pre><code>$Config_DB_Host="localhost";  // Database Host
+$Config_DB_Name="test";  // Database  name
+$Config_DB_User="root";   // Database user name
+$Config_DB_Password="root"; // Database user password
+</code></pre>
+
+<h3>
+<a id="other-options" class="anchor" href="#other-options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Other options</h3>
+
+<p>secure your api by Authentication Code   </p>
+
+<pre><code>$Config_Required_Auth=FALSE;   //is required Authentication
+$Config_Auth_Code="any code";   //Authentication Code
+</code></pre>
+
+<h2>
+<a id="how-to-use-with-example" class="anchor" href="#how-to-use-with-example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use <code>with example</code>
+</h2>
+
+<p>you need to send json template   to  POST  <code>request</code></p>
+
+<h3>
+<a id="get-all-data-in-table" class="anchor" href="#get-all-data-in-table" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>get all data in table</h3>
+
+<p>This command enables you to retrieve all the rows in the table <code>user</code></p>
+
+<pre><code>{
+  "action": "all",
+  "auth": "any code",
+  "from": "user"
+}
+</code></pre>
+
+<h3>
+<a id="retrieve-records-by-a-particular-column-value" class="anchor" href="#retrieve-records-by-a-particular-column-value" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve records by a particular column value</h3>
+
+<p>retrieve records data from table <code>user</code>  by column <code>id</code></p>
+
+<pre><code>{
+  "action": "get",
+  "auth": "any code",
+  "from": "user",
+  "key": "id",
+  "data": {
+    "id": "1",
+  }
+}
+</code></pre>
+
+<h3>
+<a id="search--records-in-table" class="anchor" href="#search--records-in-table" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Search  records in table</h3>
+
+<p>Search   records data from table <code>user</code>  by column <code>name</code></p>
+
+<pre><code>{
+  "action": "search",
+  "auth": "any code",
+  "from": "user",
+  "key": "name",
+  "data": {
+    "name": "ali",
+  }
+}
+</code></pre>
+
+<h3>
+<a id="insert-record-in-table" class="anchor" href="#insert-record-in-table" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Insert record in table</h3>
+
+<p>add  record  in table <code>user</code>  with values</p>
+
+<pre><code>{
+  "action": "add",
+  "auth": "any code",
+  "from": "user",
+  "data": {
+    "id": "1",
+    "name": "ali",
+    "pass": "05980727"
+  }
+}
+</code></pre>
+
+<h3>
+<a id="update-record-in-table" class="anchor" href="#update-record-in-table" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Update record in table</h3>
+
+<p>record  record  in table <code>user</code>  with a particular column <code>id</code> </p>
+
+<pre><code>{
+  "action": "edit",
+  "auth": "any code",
+  "from": "user",
+  "key": "id",
+  "data": {
+    "id": "1",
+    "name": "ali",
+    "pass": "05980727"
+  }
+}
+</code></pre>
+
+<h3>
+<a id="remove-record-in-table" class="anchor" href="#remove-record-in-table" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Remove record in table</h3>
+
+<p>remove  record  in table <code>user</code>  with a particular column <code>id</code> </p>
+
+<pre><code>{
+  "action": "delete",
+  "auth": "any code",
+  "from": "user",
+  "key": "id",
+  "data": {
+    "id": "1"
+  }
+}
+</code></pre>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development</h2>
+
+<ul>
+<li>
+<a href="mailto:ameral.java@gmail.com">Email</a> - mohammed alimoor</li>
+</ul>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/MohammedAlimoor/Dynamic-Api-php/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/MohammedAlimoor/Dynamic-Api-php/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/MohammedAlimoor/Dynamic-Api-php"></a> is maintained by <a href="https://github.com/MohammedAlimoor">MohammedAlimoor</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
