@@ -115,5 +115,5 @@ you need to send json template   to  POST  ``` request ```
 }
 ```
 
-## Deployment
+## Development
 * [Email](mailto:ameral.java@gmail.com) - mohammed alimoor
