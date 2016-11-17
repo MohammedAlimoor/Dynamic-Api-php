@@ -1,0 +1,62 @@
+/// get  all data from table
+{
+  "action": "all",
+  "auth": "any code",
+  "from": "user"
+}
+// get  data from table by id
+{
+  "action": "get",
+  "auth": "any code",
+  "from": "user",
+  "key": "id",
+  "data": {
+    "id": "1",
+  }
+}
+
+// search by name
+{
+  "action": "search",
+  "auth": "any code",
+  "from": "user",
+  "key": "name",
+  "data": {
+    "name": "ali",
+  }
+}
+// add  to user table
+{
+  "action": "add",
+  "auth": "any code",
+  "from": "user",
+  "data": {
+    "id": "1",
+    "name": "ali",
+    "pass": "05980727"
+  }
+}
+// edit   user table  when id   = 1
+{
+  "action": "edit",
+  "auth": "any code",
+  "from": "user",
+  "key": "id",
+  "data": {
+    "id": "1",
+    "name": "ali",
+    "pass": "05980727"
+  }
+}
+// delete from  user table  when id   = 1
+{
+  "action": "delete",
+  "auth": "any code",
+  "from": "user",
+  "key": "id",
+  "data": {
+    "id": "1",
+    "name": "ali",
+    "pass": "05980727"
+  }
+}
